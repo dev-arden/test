@@ -17,6 +17,7 @@
     "@react-navigation/stack": "^5.12.3",
     "native-base": "^2.13.14",
     "react": "16.13.1",
+    "react-hook-form": "^6.11.3",
     "react-native": "0.63.3",
     "react-native-firebase": "^5.6.0",
     "react-native-form": "^2.1.3",

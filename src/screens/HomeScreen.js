@@ -13,6 +13,10 @@ const HomeScreen = ({navigation}) => {
         onPress = {() => navigation.navigate('test')}
         title = "Go to test screen" 
       />
+      <Button 
+        onPress = {() => navigation.navigate('Form')}
+        title = "Go to Form screen" 
+      />
     </View>
   );
 };

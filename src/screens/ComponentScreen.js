@@ -6,21 +6,26 @@ import SignaturePad from 'react-native-signature-pad'
 import firestore from "@react-native-firebase/firestore";
 
 class ComponentScreen extends Component{
+  state = {
+    signs : [],
+    isSoulSold: false
+  }
+
   constructor(props) {
     super(props);
-    this.state = {
-      signature: "",
-      isSoulSold: false
-     };
-     //this.itemsRef = firestore().collection(`people`)
-     this.getUser();
-    }
+    this.subscriber = 
+      firestore()
+        .collection("signs")
+        .onSnapshot(docs => {
+          let signs = []
+          docs.forEach(doc => {
+            signs.push(doc.data())
+          })
+          this.setState({signs})
+          console.log(signs)
+        })
+  }
 
-    getUser = async () => {
-      const userDocument = await firestore().collection("sign-here").
-      doc('DlCMWylKeaTB1ETzYdBn').get()
-      console.log(userDocument)
-    }
 
   pushToFirebase() {
     let formValues = this.refs.soulForm.getValues()
@@ -28,12 +33,17 @@ class ComponentScreen extends Component{
     if(formValues.firstName === "" || formValues.lastName === "" || formValues.signature === "") {
       console.log("Not all fields in the form are populated.")
     } else {
-      this.itemsRef.push(formValues)
+      firestore().collection('signs').add({
+        firstname: formValues.firstName,
+        lastname: formValues.lastName,
+        signature: formValues.signature
+      })
       this.setState({
         isSoulSold: true
       })
     }
   }
+  
 
   signaturePadChange(base64DataUrl) {
     this.setState({
@@ -73,7 +83,8 @@ class ComponentScreen extends Component{
                 style={styles.signaturePad}
                 />
             </View>
-            <Button Block primary onPress={() => this.pushToFirebase()} style={styles.button}><Text>SELL IT</Text></Button>
+            <Button title="SELL IT" Block primary onPress={() => this.pushToFirebase()} style={styles.button}>
+            <Text>SELL IT</Text></Button>
           </Form>
         </View>}
       </View>

@@ -11,12 +11,14 @@ import { createStackNavigator } from 'react-navigation-stack';
 import HomeScreen from "./src/screens/HomeScreen";
 import ComponentScreen from "./src/screens/ComponentScreen";
 import testtest from "./testtest";
+import formScreen from "./src/screens/formScreen";
 
 const navigator = createStackNavigator(
   {
     Home: HomeScreen, 
     Component : ComponentScreen,
-    test : testtest
+    test : testtest,
+    Form : formScreen
   },
   //first object
   {
