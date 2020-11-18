@@ -5,49 +5,42 @@ import firestore from "@react-native-firebase/firestore";
 
 class testtest extends Component{
   state = {
-    user: {
-      name: "",
-      age: ""
-    }
+    users: []
   }
   constructor(props) {
     super(props);
-    this.getUser();
-    this.getUsers(); 
-     
-    firestore()
-      .collection('Users')
-      .get()
-      .then(querySnapshot => {
-        console.log('Total users: ', querySnapshot.size);
-        querySnapshot.forEach(documentSnapshot => {
-          console.log('User ID: ', documentSnapshot.id, 
-          documentSnapshot.data());
-        });
-      });
-  }
-  getUser = async () => {
-    const userDocument = await firestore()
-      .collection("users").doc('UQlo2CncZ409AxyJczQc').get()
-    console.log(userDocument)
-  } 
-
-  getUsers = async () => {
-    const users= await firestore()
+    this.subscriber = 
+      firestore()
       .collection("users")
-      .where('age', '==', 20 )
-      .get()
-    console.log(users)
-  } 
+      .onSnapshot(docs => {
+        let users = []
+        docs.forEach(doc => {
+          users.push(doc.data())
+        })
+        this.setState({ users })
+        console.log(users)
+    })
+  }
+
+  addRandomUser = async () => {
+    let name = Math.random().toString(36).substring(7)
+    firestore().collection('users').add({
+      name,
+      age: 20
+    })
+  }
 
   render() {
     return (
       <View>
-        <Text>Name: {this.state.user.name}</Text>
-        <Text>Age: {this.state.user.age}</Text>
+          <Button title="Add Random User" onPress={this.addRandomUser}/>
+        {this.state.users.map((user,index) => <View key={index}>
+          <Text>{user.name}</Text>
+        </View>)}
       </View>
     );
   }
 }
+  
 
-export default testtest
+export default testtest;
