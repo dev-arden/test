@@ -9,6 +9,10 @@ const HomeScreen = ({navigation}) => {
         onPress = {() => navigation.navigate('Component')}
         title = "Go to Components Demo" 
       />
+      <Button 
+        onPress = {() => navigation.navigate('test')}
+        title = "Go to test screen" 
+      />
     </View>
   );
 };

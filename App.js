@@ -10,11 +10,13 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import HomeScreen from "./src/screens/HomeScreen";
 import ComponentScreen from "./src/screens/ComponentScreen";
+import testtest from "./testtest";
 
 const navigator = createStackNavigator(
   {
     Home: HomeScreen, 
-    Component : ComponentScreen
+    Component : ComponentScreen,
+    test : testtest
   },
   //first object
   {
