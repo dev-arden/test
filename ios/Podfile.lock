@@ -233,8 +233,6 @@ PODS:
     - React-Core (= 0.63.3)
     - React-jsi (= 0.63.3)
     - ReactCommon/turbomodule/core (= 0.63.3)
-  - Firebase/Analytics (6.34.0):
-    - Firebase/Core
   - Firebase/Core (6.34.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.9.0)
@@ -561,7 +559,7 @@ PODS:
     - React-cxxreact (= 0.63.3)
     - React-jsi (= 0.63.3)
   - React-jsinspector (0.63.3)
-  - react-native-safe-area-context (3.1.8):
+  - react-native-safe-area-context (3.1.9):
     - React-Core
   - react-native-signature-capture (0.4.10):
     - React
@@ -627,16 +625,14 @@ PODS:
     - React-Core (= 0.63.3)
     - React-cxxreact (= 0.63.3)
     - React-jsi (= 0.63.3)
+  - RNCCheckbox (0.5.6):
+    - React-Core
   - RNCMaskedView (0.1.10):
     - React
-  - RNFBAnalytics (7.6.9):
-    - Firebase/Analytics (~> 6.34.0)
-    - React-Core
-    - RNFBApp
   - RNFBApp (8.4.7):
     - Firebase/CoreOnly (~> 6.34.0)
     - React-Core
-  - RNFBFirestore (7.9.1):
+  - RNFBFirestore (7.10.3):
     - Firebase/Firestore (~> 6.34.0)
     - React-Core
     - RNFBApp
@@ -651,7 +647,7 @@ PODS:
     - React
   - RNGestureHandler (1.8.0):
     - React
-  - RNScreens (2.13.0):
+  - RNScreens (2.15.0):
     - React-Core
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -707,8 +703,8 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCCheckbox (from `../node_modules/@react-native-community/checkbox`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
-  - "RNFBAnalytics (from `../node_modules/@react-native-firebase/analytics`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBFirestore (from `../node_modules/@react-native-firebase/firestore`)"
   - RNFirebase (from `../node_modules/react-native-firebase/ios`)
@@ -806,10 +802,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCCheckbox:
+    :path: "../node_modules/@react-native-community/checkbox"
   RNCMaskedView:
     :path: "../node_modules/@react-native-community/masked-view"
-  RNFBAnalytics:
-    :path: "../node_modules/@react-native-firebase/analytics"
   RNFBApp:
     :path: "../node_modules/@react-native-firebase/app"
   RNFBFirestore:
@@ -868,7 +864,7 @@ SPEC CHECKSUMS:
   React-jsi: df07aa95b39c5be3e41199921509bfa929ed2b9d
   React-jsiexecutor: b56c03e61c0dd5f5801255f2160a815f4a53d451
   React-jsinspector: 8e68ffbfe23880d3ee9bafa8be2777f60b25cbe2
-  react-native-safe-area-context: 01158a92c300895d79dee447e980672dc3fb85a6
+  react-native-safe-area-context: 86612d2c9a9e94e288319262d10b5f93f0b395f5
   react-native-signature-capture: 6dae6c8c9f085536d4ba305e15c01f0a3a49373e
   react-native-webview: ef8d30ecc5baf6bf7821690180c2f9bf2bdf00c0
   React-RCTActionSheet: 53ea72699698b0b47a6421cb1c8b4ab215a774aa
@@ -881,13 +877,13 @@ SPEC CHECKSUMS:
   React-RCTText: 65a6de06a7389098ce24340d1d3556015c38f746
   React-RCTVibration: 8e9fb25724a0805107fc1acc9075e26f814df454
   ReactCommon: 4167844018c9ed375cc01a843e9ee564399e53c3
+  RNCCheckbox: 0fa612ce146445b80efde233dab96602faf67d31
   RNCMaskedView: f5c7d14d6847b7b44853f7acb6284c1da30a3459
-  RNFBAnalytics: 7d40b9b392fe2b8e6c2beeb119d1b090ed671c94
   RNFBApp: 804b98033f45c3a3e35b56de8c894f85ef5e4388
-  RNFBFirestore: 3fe90c352fdbbff5a822c43f571cf8d9fdf38029
+  RNFBFirestore: e21f4bcd634430775adca413a93ab995a34f743e
   RNFirebase: 37daa9a346d070f9f6ee1f3b4aaf4c8e3b1d5d1c
   RNGestureHandler: 7a5833d0f788dbd107fbb913e09aa0c1ff333c39
-  RNScreens: 13f23e5498fb4aa749d19a5eda7f8792fbb9d01f
+  RNScreens: 2ad555d4d9fa10b91bb765ca07fe9b29d59573f0
   Yoga: 7d13633d129fd179e01b8953d38d47be90db185a
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
